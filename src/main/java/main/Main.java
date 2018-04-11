@@ -8,7 +8,6 @@ import servlets.AllRequestsServlet;
  public class Main {
      public static void main(String[] args) throws Exception {
          AllRequestsServlet allRequestsServlet = new AllRequestsServlet();
-
          ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
          context.addServlet(new ServletHolder(allRequestsServlet), "/*");
 
@@ -16,8 +15,8 @@ import servlets.AllRequestsServlet;
          server.setHandler(context);
 
          server.start();
-         java.util.logging.Logger.getGlobal().info("Server started");
-//         System.out.println("Server started");
+//         java.util.logging.Logger.getGlobal().info("Server started");
+         System.out.println("Server started");
          server.join();
      }
  }

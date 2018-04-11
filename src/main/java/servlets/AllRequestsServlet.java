@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -18,9 +19,11 @@ import java.util.Map;
 
           Map<String, Object> pageVariables = createPageVariablesMap(request);
           pageVariables.put("message", "");
+          String parameters =  request.getParameterMap().toString();
+          System.out.println(parameters);
 
 //          response.getWriter().println(PageGenerator.instance().getPage("page.html", pageVariables));
-         response.getWriter().println(PageGenerator.instance().getPage("task1.html", pageVariables));
+         response.getWriter().println(pageVariables.get("values"));
 
           response.setContentType("text/html;charset=utf-8");
           response.setStatus(HttpServletResponse.SC_OK);
@@ -30,6 +33,7 @@ import java.util.Map;
       public void doPost(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {
           Map<String, Object> pageVariables = createPageVariablesMap(request);
+
 
           String message = request.getParameter("message");
 

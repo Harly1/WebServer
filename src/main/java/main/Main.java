@@ -16,11 +16,9 @@ import servlets.AllRequestsServlet;
          server.setHandler(context);
 
          server.start();
-
-         System.out.println("Server started");
-
-         server.join();
 //         java.util.logging.Logger.getGlobal().info("Server started");
+         System.out.println("Server started");
+         server.join();
      }
  }
 

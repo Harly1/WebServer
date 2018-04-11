@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -16,12 +17,27 @@ import java.util.Map;
 
           Map<String, Object> pageVariables = createPageVariablesMap(request);
           pageVariables.put("message", "");
+//          String parameters =  request.getParameterMap().toString();
           String parameter = request.getParameter("key");
-          response.getWriter().println(parameter);
+
+//          System.out.println(parameters);
+
+//          response.getWriter().println(PageGenerator.instance().getPage("page.html", pageVariables));
+//         response.getWriter().println(pageVariables.get("values"));
+         response.getWriter().println(parameter);
+
+    /*      response.setContentType("text/html;charset=utf-8");
+          response.setStatus(HttpServletResponse.SC_OK);*/
+
       }
 
       private static Map<String, Object> createPageVariablesMap(HttpServletRequest request) {
           Map<String, Object> pageVariables = new HashMap<>();
+  /*        pageVariables.put("method", request.getMethod());
+          pageVariables.put("URL", request.getRequestURL().toString());
+          pageVariables.put("pathInfo", request.getPathInfo());
+          pageVariables.put("sessionId", request.getSession().getId());
+          pageVariables.put("parameters", request.getParameterMap().toString());*/
           pageVariables.put("values",request.getParameter("key"));
           return pageVariables;
       }

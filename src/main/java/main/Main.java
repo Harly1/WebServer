@@ -6,6 +6,7 @@ import org.eclipse.jetty.servlet.ServletHolder;
 import servlets.AllRequestsServlet;
 
  public class Main {
+//     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
      public static void main(String[] args) throws Exception {
          AllRequestsServlet allRequestsServlet = new AllRequestsServlet();
          ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
